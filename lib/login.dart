@@ -8,6 +8,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _usernameController = TextEditingController(); //контроллер (видаляє написаний текст в полі вводу name)
+  final _passwordController = TextEditingController();//контроллер (видаляє написаний текст в полі вводу password)
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           children: <Widget>[
             const SizedBox(height: 80.0),
+            //
             Column(
               children: <Widget>[
                 Image.asset('assets/diamond.png'),
@@ -26,6 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 120.0),
             //
             TextField(
+              controller: _usernameController,// встановлює контроллер
               keyboardType: TextInputType.visiblePassword,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -39,6 +44,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             //
             TextField(
+              controller: _passwordController,// встановлює контроллер
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 filled: true,
@@ -46,9 +52,27 @@ class _LoginPageState extends State<LoginPage> {
               ),
               obscureText: true, // маскує текст (для паролів)
             ),
+            OverflowBar(
+              alignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('CANCEL'),
+                  onPressed: () {
+                    _usernameController.clear();// Запускає контроллери при натисканні cancel
+                    _passwordController.clear();// Запускає контроллери при натисканні cancel
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('NEXT'),
+                  onPressed: () {
+                    Navigator.pop(context);// запускає навігацію
+                  },
+                )
+              ],
+            ),
           ],
         ),
       ),
-    ); //11
+    );
   }
 }

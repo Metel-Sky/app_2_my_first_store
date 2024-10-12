@@ -12,7 +12,8 @@ class HomePage extends StatelessWidget{
       body: Center(
         child: Text('You did it!'),
       ),
-    );
+      resizeToAvoidBottomInset: false,//Это гарантирует, что внешний вид клавиатуры не изменит размер домашней страницы или ее виджетов.
+    );//1
   }
 }
 
