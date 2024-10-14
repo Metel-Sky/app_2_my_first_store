@@ -103,6 +103,6 @@ class HomePage extends StatelessWidget {
       ),
       resizeToAvoidBottomInset:
           false, //--^--Это гарантирует, что внешний вид клавиатуры не изменит размер домашней страницы или ее виджетов.
-    ); //1
+    ); //12
   }
 }
