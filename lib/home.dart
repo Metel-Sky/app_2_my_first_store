@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-import 'model/product.dart';
-import 'model/products_repository.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -103,6 +100,6 @@ class HomePage extends StatelessWidget {
       ),
       resizeToAvoidBottomInset:
           false, //--^--Это гарантирует, что внешний вид клавиатуры не изменит размер домашней страницы или ее виджетов.
-    ); //12
+    ); //1
   }
 }
