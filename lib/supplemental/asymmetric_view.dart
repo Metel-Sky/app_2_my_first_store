@@ -1,16 +1,4 @@
-// Copyright 2018-present the Flutter authors. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+
 
 import 'package:flutter/material.dart';
 
@@ -27,14 +15,14 @@ class AsymmetricView extends StatelessWidget {
       return <Container>[];
     }
 
-    /// This will return a list of columns. It will oscillate between the two
-    /// kinds of columns. Even cases of the index (0, 2, 4, etc) will be
-    /// TwoProductCardColumn and the odd cases will be OneProductCardColumn.
-    ///
-    /// Each pair of columns will advance us 3 products forward (2 + 1). That's
-    /// some kinda awkward math so we use _evenCasesIndex and _oddCasesIndex as
-    /// helpers for creating the index of the product list that will correspond
-    /// to the index of the list of columns.
+    /// Це поверне список стовпців. Він буде коливатися між двома
+    /// види стовпців. Навіть регістри індексу (0, 2, 4 і т.д.) будуть
+    /// TwoProductCardColumn і в непарних випадках буде OneProductCardColumn.
+    /// Кожна пара стовпців просуває нас на 3 продукти вперед (2 + 1). це так
+    /// якась незграбна математика, тому ми використовуємо _evenCasesIndex і _oddCasesIndex як
+    /// помічники для створення індексу списку продуктів, який відповідатиме
+    /// до індексу списку стовпців.
+
     return List.generate(_listItemCount(products.length), (int index) {
       double width = .59 * MediaQuery.of(context).size.width;
       Widget column;
@@ -64,10 +52,12 @@ class AsymmetricView extends StatelessWidget {
   }
 
   int _evenCasesIndex(int input) {
-    /// The operator ~/ is a cool one. It's the truncating division operator. It
-    /// divides the number and if there's a remainder / decimal, it cuts it off.
-    /// This is like dividing and then casting the result to int. Also, it's
-    /// functionally equivalent to floor() in this case.
+    //
+    /// Оператор ~/ є крутим. Це оператор скорочення ділення. Це
+    /// ділить число і, якщо є залишок / десятковий дроб, він відрізає його.
+    /// Це схоже на ділення та переведення результату в int. Крім того, це
+    /// функціонально еквівалентний floor() у цьому випадку.
+    //
     return input ~/ 2 * 3;
   }
 
